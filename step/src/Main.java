@@ -1,6 +1,11 @@
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        312312312
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+
+        }
     }
 }
