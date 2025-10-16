@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker(scanner);
-        Converter[] converter;
+
         while (true) {
             printMenu();
         int i = scanner.nextInt();
@@ -24,6 +24,7 @@ public class Main {
             }
         }
     }
+
     static void printMenu() {
         System.out.println("1 - ввести количество шагов за определённый день");
         System.out.println("2 - изменить цель по количеству шагов в день");
