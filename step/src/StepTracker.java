@@ -41,7 +41,7 @@ public class StepTracker {
         }
 
         // Вытащили из хранилища месяц который необходимо отредактировать и сохранили его в переменную editedMonth
-        MonthData editedMonth = monthToData[month];
+        MonthData editedMonth = monthToData[month - 1];
 
         // Вытащили из месяца который нам необходимо отредактировать массив со всеми днями
         int[] editedDays = editedMonth.days;
@@ -52,7 +52,7 @@ public class StepTracker {
         // Добавили количество шагов за данный день
         editedDay = editedDay + steps;
         // Сохранили новое значение шагов за день
-        editedDays[days] = editedDay;
+        editedDays[days - 1] = editedDay;
         // Сохранил новый массив с редактируемым днем, с обновленным количество шагов
         editedMonth.days = editedDays;
         // Сохранили в хранилище monthToData редактируемый месяц
@@ -81,12 +81,12 @@ public class StepTracker {
             month = scanner.nextInt();
         }
 
-        MonthData monthData = monthToData[month];
+        MonthData monthData = monthToData[month - 1];
         monthData.printDaysAndStepsFromMonth();
 
         System.out.println("общее количество шагов за месяц " + monthData.sumStepsFromMonth());
         System.out.println("максимальное пройденное количество шагов в месяце " + monthData.maxSteps());
-        System.out.println("среднее количество шагов " + monthData.sumStepsFromMonth() / monthData.days.length);
+        System.out.println("среднее количество шагов " + (double) monthData.sumStepsFromMonth() / monthData.days.length);
         int steps = monthData.sumStepsFromMonth();
         System.out.println("пройденная дистанция (в км) " + converter.convertToKm(steps));
         System.out.println("количество сожжённых килокалорий " + converter.convertStepsToKilocalories(steps));

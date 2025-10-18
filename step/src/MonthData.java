@@ -13,7 +13,7 @@ public class MonthData {
     int sumStepsFromMonth() {
         int sumSteps = 0;
 
-        for (int i = 1; i < days.length; i++) {
+        for (int i = 0; i < days.length; i++) {
             sumSteps += days[i];
         }
 
